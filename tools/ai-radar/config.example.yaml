@@ -1,0 +1,71 @@
+version: 1
+timezone: Europe/Berlin
+output_root: 'G:\\Meine Ablage\\Antigravity\\AI_Intel'
+window:
+  start_hour: 2
+  end_hour: 8
+ranking:
+  min_score: 34
+  deep_analysis_score: 68
+  max_brief_items: 20
+  dedupe_similarity: 0.78
+  lookback_hours: 30
+queries:
+  - artificial intelligence
+  - AI agent
+  - reasoning model
+  - test-time compute
+  - coding agent
+  - multimodal model
+  - open source LLM
+  - robotics foundation model
+  - world model
+  - reinforcement learning
+  - generative AI engineering
+sources:
+  arxiv:
+    enabled: true
+    feeds:
+      - https://rss.arxiv.org/rss/cs.AI
+      - https://rss.arxiv.org/rss/cs.CL
+      - https://rss.arxiv.org/rss/cs.LG
+  hackernews:
+    enabled: true
+    max_per_query: 25
+  github:
+    enabled: true
+    max_per_query: 20
+    token_env: GITHUB_TOKEN
+  huggingface:
+    enabled: true
+    limit: 100
+    token_env: HF_TOKEN
+  youtube:
+    enabled: false
+    api_key_env: YOUTUBE_API_KEY
+    max_per_query: 10
+  x:
+    enabled: false
+    bearer_token_env: X_BEARER_TOKEN
+    max_results: 50
+  rss:
+    enabled: true
+    feeds: []
+  reddit:
+    enabled: false
+  instagram:
+    enabled: false
+watchlist:
+  domains:
+    - openai.com
+    - anthropic.com
+    - deepmind.google
+    - ai.meta.com
+    - nvidia.com
+    - huggingface.co
+    - github.com
+policy:
+  use_html_scraping_for_social_platforms: false
+  secrets_in_env_only: true
+  keep_raw_payloads: true
+  fail_open_per_source: true
